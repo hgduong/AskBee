@@ -1,0 +1,23 @@
+/* Chữ lấy trên fonts.googleapis.cpm */
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Edu NSW ACT Hand Pre', cursive;
+  -webkit-font-smoothing: antialiased;   /* Làm chữ mượt hơn */
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: 470; /* độ dày giãn chữ */
+  display: flex;
+  justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: seagreen;
+
+}
+
+code {
+  font-family: 'Edu NSW ACT Hand Pre', cursive;
+  font-size: 1.2em;
+  color: #333;
+}
