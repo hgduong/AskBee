@@ -133,10 +133,20 @@
 /* Nút bên phải */
 .auth-buttons {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
-.login-btn,
+.login-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  
+}
 .register-btn {
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
@@ -146,9 +156,10 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
+  margin: 0 20px;
 }
 
 .login-btn:hover,
 .register-btn:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(160, 221, 46, 0.4);
 }

@@ -3,7 +3,7 @@ import { Layout, Menu, theme } from 'antd';
 import './Header.css';
 import { UserOutlined, ArrowRightOutlined} from '@ant-design/icons';
 import { Dropdown, Avatar } from 'antd';
-
+import { useNavigate } from 'react-router-dom';
 const menu = (
   <Menu
     items={[
@@ -28,7 +28,19 @@ const App: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+const navigate = useNavigate();
 
+const handle = (e) => {
+  e.preventDefault();
+  const isRegisterSuccess=true;
+  
+  if(isRegisterSuccess){
+    navigate("/login")
+  } else {
+    alert("Sai tài khoản hoặc mật khẩu");
+  }
+
+}
   return (
     
     <>
@@ -54,8 +66,8 @@ const App: React.FC = () => {
         />
         {/* Thêm nút Đăng nhập/Đăng ký */}
   <div className="auth-buttons">
-    <button className="login-btn">Đăng nhập</button>
-    <button className="register-btn">Đăng ký</button>
+    <button className="login-btn">Đăng kí</button>
+    <button onClick={handle} className="register-btn">Đăng nhập</button>
   </div>
   <Dropdown overlay={menu} placement="bottomRight">
   <Avatar icon={<UserOutlined />} style={{ cursor: 'pointer' }} />
