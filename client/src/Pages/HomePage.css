@@ -1,0 +1,26 @@
+/* File: Background.css */
+
+.fancy-background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff5c3, #ffe29f, #ffd194, #ffb347, #f7b733);
+  background-size: 400% 400%;
+  animation: flowGradient 12s ease infinite;
+  filter: blur(0px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@keyframes flowGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
