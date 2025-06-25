@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+}
+
+.footer {
+    background-color: rgb(177, 169, 99);
+    padding: 12px 0 12px 0;
+    box-shadow: 0 0 20px rgb(179, 137, 47);
+    outline: none;
+}
+.footer ::before {
+    background:linear-gradient(45deg, #afb652,#545c43);
+}

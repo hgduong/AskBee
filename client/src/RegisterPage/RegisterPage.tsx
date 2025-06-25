@@ -1,10 +1,9 @@
-import "./RegisterPage.css"
-import React from 'react'
-
+import React from "react";
+import { useNavigate } from "react-router-dom";
 const RegisterPage = () => {
-  return (
-    <div>RegisterPage</div>
-  )
-}
+const navigate = useNavigate()
 
-export default RegisterPage
+  return <div>RegisterPage</div>;
+};
+
+export default RegisterPage;

@@ -21,23 +21,36 @@
   right: -2px;
   bottom: -2px;
   z-index: -1;
-  background: linear-gradient(270deg, #ffafbd, #ffc3a0, #ffefba, #a1c4fd, #c2e9fb);
+  background: linear-gradient(
+    270deg,
+    #ffafbd,
+    #ffc3a0,
+    #ffefba,
+    #a1c4fd,
+    #c2e9fb
+  );
   background-size: 1000% 1000%;
   border-radius: 14px;
   animation: borderFlow 8s linear infinite;
 }
 
 @keyframes shimmer {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Chữ chạy */
 .marquee-text {
   white-space: nowrap;
   font-size: 28px;
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   color: #b16b00;
   text-shadow: 1px 1px 4px rgba(255, 195, 0, 0.5);
   animation: marqueeMove 15s linear infinite;
@@ -67,18 +80,26 @@
 }
 /*------------------------------Header------------------------------------*/
 .custom-header {
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-between; /* chia trái phải */
   padding: 0 20px;
   width: 100%;
   height: 64px;
-  background: linear-gradient(135deg, #ff6ec7, #b86ef2, #3d9fff, #00f5d4, #ffa63d);
+  background: linear-gradient(
+    135deg,
+    #ff6ec7,
+    #b86ef2,
+    #3d9fff,
+    #00f5d4,
+    #ffa63d
+  );
   background-size: 400% 400%;
   animation: gradientFlow 8s ease infinite;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-  background: linear-gradient(135deg,
+  background: linear-gradient(
+    135deg,
     #ff6ec7,
     #b86ef2,
     #3d9fff,
@@ -93,7 +114,6 @@
 }
 
 .custom-menu {
-
   flex: 1;
   min-width: 0;
   background: transparent;
@@ -145,8 +165,12 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
-  
+  list-style: none;
 }
+.rg {
+  margin: 0 10px 0 10px;
+}
+
 .register-btn {
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
@@ -157,9 +181,36 @@
   cursor: pointer;
   transition: 0.3s ease;
   margin: 0 20px;
+  list-style: none;
 }
 
 .login-btn:hover,
 .register-btn:hover {
   background-color: rgba(160, 221, 46, 0.4);
+}
+
+.nav-list {
+  display: flex;
+  width: 100%;
+  justify-items: right;
+  margin: 0 20px 20px 500px;
+}
+.nav-item {
+ 
+  display: inline;
+  margin: 20px 20px 20px 20px;
+  text-decoration: none;
+  padding: 10px 10px 10px 10px;
+}
+.lg {
+  display: flex;
+  margin: 10px 10px 10px 10px;
+}
+.iconavt{
+  font-size: 45px;
+  margin-left: 190px;
+  margin-top:8px;
+  margin-bottom:5px;
+  border: 2px solid black;
+  border-radius:10%;
 }
