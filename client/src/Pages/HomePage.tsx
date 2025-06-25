@@ -1,16 +1,17 @@
-import React from 'react';
-import './HomePage.css';
+// Home.js
+import React from "react";
 
-function Home() {
+const Home = () => {
   return (
-    <div>
-      <div className="fancy-background" />
-      <div style={{ textAlign: 'center', paddingTop: '150px', position: 'relative', zIndex: 1 }}>
-        <h1 style={{ color: '#4d2600' }}>AI Q&A System</h1>
-        <p style={{ color: '#5c3d00' }}>Chào mừng!</p>
-      </div>
+    <div className="home">
+      <h1>Chào mừng đến với Trang Chủ</h1>
+      <p>
+        Đây là nơi bạn có thể tìm thấy thông tin về sản phẩm và dịch vụ của
+        chúng tôi.
+      </p>
+      <p>Hãy đăng nhập hoặc đăng ký để trải nghiệm đầy đủ các tính năng!</p>
     </div>
   );
-}
+};
 
 export default Home;

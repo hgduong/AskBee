@@ -1,12 +1,10 @@
-import React from 'react'
-import {Layout } from 'antd';
+import React from "react";
 
-const {Footer} = Layout;
-
-export const FooterPage = () => {
+const Footer = () => {
   return (
-    <Footer style={{ textAlign: 'center' }}>
-        AskBee ©{new Date().getFullYear()} Created by AskBee
-      </Footer>
-  )
-}
+    <div style={{ textAlign: "center" }}>
+      AskBee ©{new Date().getFullYear()} Created by AskBee
+    </div>
+  );
+};
+export default Footer;
