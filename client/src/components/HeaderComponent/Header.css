@@ -218,24 +218,18 @@
   border: 2px solid black;
   border-radius: 10%;
 }
-.item-class {
-  display: flex;
-  margin: 0 20px;
-}
-.item-class class {
-  margin: 0 20px;
-}
+
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
   padding: 0 50px 10px 0px;
 }
 
 .grid-item {
   background-color: #f1e349;
   color: rgb(28, 6, 6);
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   border-radius: 5px;
   font-size: 20px;

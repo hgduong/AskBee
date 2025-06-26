@@ -65,6 +65,21 @@ const Header = () => {
         </ul>
       </nav>
       <div className="grid-container">
+        <Link to="/class1" className="grid-item">
+          Lớp 1
+        </Link>
+        <Link to="/class2" className="grid-item">
+          Lớp 2
+        </Link>
+        <Link to="/class3" className="grid-item">
+          Lớp 3
+        </Link>
+        <Link to="/class4" className="grid-item">
+          Lớp 4
+        </Link>
+        <Link to="/class5" className="grid-item">
+          Lớp 5
+        </Link>
         <Link to="/class6" className="grid-item">
           Lớp 6
         </Link>

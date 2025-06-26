@@ -7,6 +7,11 @@ import Login from "./LoginForm/LoginForm.tsx"; // Giả sử bạn đã tạo co
 import Footer from "./components/FooterComponent/Footer.tsx";
 import RegisterPage from "./RegisterPage/RegisterPage.tsx";
 import NotFound from "./NotFound/NotFound.tsx";
+import Class1 from "./ClassItem/Class1.tsx";
+import Class2 from "./ClassItem/Class2.tsx";
+import Class3 from "./ClassItem/Class3.tsx";
+import Class4 from "./ClassItem/Class4.tsx";
+import Class5 from "./ClassItem/Class5.tsx";
 import Class6 from "./ClassItem/Class6.tsx";
 import Class7 from "./ClassItem/Class7.tsx";
 import Class8 from "./ClassItem/Class8.tsx";
@@ -31,6 +36,11 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/class1" element={<Class1 />} />
+          <Route path="/class2" element={<Class2 />} />
+          <Route path="/class3" element={<Class3 />} />
+          <Route path="/class4" element={<Class4 />} />
+          <Route path="/class5" element={<Class5 />} />
           <Route path="/class6" element={<Class6 />} />
           <Route path="/class7" element={<Class7 />} />
           <Route path="/class8" element={<Class8 />} />
