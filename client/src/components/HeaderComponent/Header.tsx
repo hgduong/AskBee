@@ -2,8 +2,10 @@ import "./Header.css";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
-import {Link} from "react-router-dom";
-import { UserOutlined } from '@ant-design/icons';
+import { Link } from "react-router-dom";
+import Bee from "../HeaderComponent/Bee";
+import { UserOutlined } from "@ant-design/icons";
+
 const Header = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,14 +26,24 @@ const Header = () => {
   };
   return (
     <header>
-      <div className="logo">Website Logo</div>
+      <div className="logo">
+        <Bee />
+      </div>
       <nav className="navbar">
         <ul className="nav-list">
-          <li className="nav-item"><Link to='/'>Trang trủ</Link></li>
-          <li className="nav-item"><Link to='/about'>Giới thiệu</Link></li>
-          <li className="nav-item"><Link to='/contact'>Liên hệ</Link></li>
-          <li className="nav-item"><Link to='/donate'>Ủng hộ</Link></li>
-          
+          <div className="nav-item">
+            <Link to="/">Trang trủ</Link>
+          </div>
+          <div className="nav-item">
+            <Link to="/about">Giới thiệu</Link>
+          </div>
+          <div className="nav-item">
+            <Link to="/contact">Liên hệ</Link>
+          </div>
+          <div className="nav-item">
+            <Link to="/donate">Ủng hộ</Link>
+          </div>
+
           {isLoggedIn ? (
             <div id="user-info">
               <span>{username}</span>
@@ -40,16 +52,41 @@ const Header = () => {
           ) : (
             <div id="login-register">
               <div className="lg">
-              <button onClick={handleLogin}>Đăng nhập</button>
+                <button onClick={handleLogin}>Đăng nhập</button>
               </div>
               <div className="rg">
-              <button onClick={handleRegister}>Đăng ký</button>
+                <button onClick={handleRegister}>Đăng ký</button>
               </div>
             </div>
           )}
-        <div className="iconavt"><UserOutlined/></div>
+          <div className="iconavt">
+            <UserOutlined />
+          </div>
         </ul>
       </nav>
+      <div className="grid-container">
+        <Link to="/class6" className="grid-item">
+          Lớp 6
+        </Link>
+        <Link to="/class7" className="grid-item">
+          Lớp 7
+        </Link>
+        <Link to="/class8" className="grid-item">
+          Lớp 8
+        </Link>
+        <Link to="/class9" className="grid-item">
+          Lớp 9
+        </Link>
+        <Link to="/class10" className="grid-item">
+          Lớp 10
+        </Link>
+        <Link to="/class11" className="grid-item">
+          Lớp 11
+        </Link>
+        <Link to="/class12" className="grid-item">
+          Lớp 12
+        </Link>
+      </div>
     </header>
   );
 };
