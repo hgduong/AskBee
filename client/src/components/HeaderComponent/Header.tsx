@@ -1,7 +1,6 @@
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Bee from "../HeaderComponent/Bee";
 import { UserOutlined } from "@ant-design/icons";
@@ -24,15 +23,16 @@ const Header = () => {
     setUsername("");
     setIsLoggedIn(false);
   };
+
   return (
     <header>
       <div className="logo">
         <Bee />
       </div>
       <nav className="navbar">
-        <ul className="nav-list">
+        <div className="nav-list">
           <div className="nav-item">
-            <Link to="/">Trang trủ</Link>
+            <Link to="/">Trang chủ</Link>
           </div>
           <div className="nav-item">
             <Link to="/about">Giới thiệu</Link>
@@ -44,25 +44,27 @@ const Header = () => {
             <Link to="/donate">Ủng hộ</Link>
           </div>
 
-          {isLoggedIn ? (
-            <div id="user-info">
-              <span>{username}</span>
-              <button onClick={onLogout}>Đăng xuất</button>
-            </div>
-          ) : (
-            <div id="login-register">
-              <div className="lg">
-                <button onClick={handleLogin}>Đăng nhập</button>
+          <div>
+            {isLoggedIn ? (
+              <div className="logout">
+                <span>{username}</span>
+                <div onClick={onLogout}>Đăng xuất</div>
               </div>
-              <div className="rg">
-                <button onClick={handleRegister}>Đăng ký</button>
+            ) : (
+              <div id="login-register">
+                <div className="lg">
+                  <div onClick={handleLogin}>Đăng nhập</div>
+                </div>
+                <div className="rg">
+                  <div onClick={handleRegister}>Đăng ký</div>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
           <div className="iconavt">
             <UserOutlined />
           </div>
-        </ul>
+        </div>
       </nav>
       <div className="grid-container">
         <Link to="/class1" className="grid-item">

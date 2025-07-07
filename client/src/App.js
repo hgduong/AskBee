@@ -2,11 +2,11 @@
 
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/HeaderComponent/Header.tsx";
-import Home from "./Pages/HomePage.tsx";
-import Login from "./LoginForm/LoginForm.tsx"; // Giả sử bạn đã tạo component Login
+import HomePage from "./Pages/HomePage/HomePage.tsx";
+import Login from "./Pages/LoginForm/LoginForm.tsx"; // Giả sử bạn đã tạo component Login
 import Footer from "./components/FooterComponent/Footer.tsx";
-import RegisterPage from "./RegisterPage/RegisterPage.tsx";
-import NotFound from "./NotFound/NotFound.tsx";
+import RegisterPage from "./Pages/RegisterPage/RegisterPage.tsx";
+import NotFound from "./Pages/NotFound/NotFound.tsx";
 import Class1 from "./ClassItem/Class1.tsx";
 import Class2 from "./ClassItem/Class2.tsx";
 import Class3 from "./ClassItem/Class3.tsx";
@@ -20,6 +20,9 @@ import Class10 from "./ClassItem/Class10.tsx";
 import Class11 from "./ClassItem/Class11.tsx";
 import Class12 from "./ClassItem/Class12.tsx";
 import "./App.css";
+import ContactPage from "./Pages/ContactPage/ContactPage.tsx";
+import DonatePage from "./Pages/DonatePage/DonatePage.tsx";
+import IntroductionPage from "./Pages/Introduction/IntroductionPage.tsx";
 const App = () => {
   return (
     <div
@@ -32,7 +35,7 @@ const App = () => {
       <Header />
       <div style={{ flex: 1 }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<NotFound />} />
@@ -48,6 +51,9 @@ const App = () => {
           <Route path="/class10" element={<Class10 />} />
           <Route path="/class11" element={<Class11 />} />
           <Route path="/class12" element={<Class12 />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/donate" element={<DonatePage />} />
+          <Route path="/about" element={<IntroductionPage />} />
         </Routes>
       </div>
       <Footer />

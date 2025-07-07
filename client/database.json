@@ -1,0 +1,67 @@
+{
+  "math_formulas": {
+    "primary_school": {
+      "grade_1": {
+        "addition": "a + b = c (cộng hai số để được tổng)",
+        "subtraction": "a - b = c (trừ để được hiệu, với a ≥ b)",
+        "multiplication": "a × b = c (nhân hai số để được tích)"
+      },
+      "grade_2": {
+        "addition_and_subtraction": "a + b - c = d (tổng và hiệu)",
+        "multiplication_table": "a × b (bảng nhân từ 1 đến 10)",
+        "division": "a ÷ b = c (chia để được thương, với b ≠ 0)"
+      },
+      "grade_3": {
+        "area_rectangle": "Diện tích hình chữ nhật = Chiều dài × Chiều rộng",
+        "perimeter_rectangle": "Chu vi hình chữ nhật = 2 × (Chiều dài + Chiều rộng)"
+      },
+      "grade_4": {
+        "area_square": "Diện tích hình vuông = Cạnh × Cạnh",
+        "fraction_addition": "(a/b) + (c/d) = (ad + bc)/(b×d), b,d ≠ 0",
+        "fraction_subtraction": "(a/b) - (c/d) = (ad - bc)/(b×d), b,d ≠ 0"
+      },
+      "grade_5": {
+        "area_triangle": "Diện tích tam giác = (Cạnh đáy × Chiều cao) / 2",
+        "percentage": "Phần trăm = (Phần / Toàn phần) × 100%"
+      }
+    },
+    "middle_school": {
+      "grade_6": {
+        "gcd_lcm": {
+          "gcd": "Ước chung lớn nhất (UCLN) của a, b = nhân tử chung lớn nhất",
+          "lcm": "Bội chung nhỏ nhất (BCNN) của a, b = nhân tử chung nhỏ nhất"
+        },
+        "equation": "ax + b = 0, x = -b/a (a ≠ 0)"
+      },
+      "grade_7": {
+        "area_circle": "Diện tích hình tròn = π × r²",
+        "circumference_circle": "Chu vi hình tròn = 2 × π × r"
+      },
+      "grade_8": {
+        "quadratic_equation": "ax² + bx + c = 0, x = [-b ± √(b² - 4ac)] / (2a), a ≠ 0",
+        "pythagorean": "a² + b² = c² (tam giác vuông)"
+      },
+      "grade_9": {
+        "trigonometry_basic": {
+          "sin": "sin A = Đối / Huyền",
+          "cos": "cos A = Kề / Huyền",
+          "tan": "tan A = Đối / Kề"
+        }
+      }
+    },
+    "high_school": {
+      "grade_10": {
+        "logarithm": "logₐ(b) = c nghĩa là a^c = b",
+        "exponential": "a^x = b, x = logₐ(b)"
+      },
+      "grade_11": {
+        "derivative": "Đạo hàm f(x) = lim[h→0] [f(x+h) - f(x)] / h",
+        "integral": "∫f(x)dx = F(x) + C"
+      },
+      "grade_12": {
+        "vector_dot_product": "a · b = |a| |b| cos θ",
+        "matrix_determinant": "Det(A) = ad - bc (ma trận 2x2: [[a, b], [c, d]])"
+      }
+    }
+  }
+}
