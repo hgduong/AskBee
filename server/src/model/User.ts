@@ -4,13 +4,24 @@ import mongoose, { Schema, Model, Document } from "mongoose";
 interface IUser extends Document {
   username: string;
   password: string;
+  phone: string;
+  address: string;
+  status: string;
+  role: "admin" | "user";
 }
 
 // Định nghĩa schema
-const userSchema: Schema = new mongoose.Schema({
-  username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-});
+const userSchema: Schema = new mongoose.Schema(
+  {
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    phone: { type: String, default: "" },
+    address: { type: String, default: "" },
+    status: { type: String, default: "active" },
+    role: { type: String, enum: ["admin", "user"], default: "user" },
+  },
+  { timestamps: true }
+);
 
 // Định nghĩa model
 const User: Model<IUser> = mongoose.model<IUser>("User", userSchema);

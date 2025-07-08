@@ -22,8 +22,13 @@ const Header = () => {
   const onLogout = () => {
     setUsername("");
     setIsLoggedIn(false);
+    navigate("/");
   };
-
+  const gotoProfile = () => {
+    if (isLoggedIn) {
+      navigate("/profile");
+    }
+  };
   return (
     <header>
       <div className="logo">
@@ -62,7 +67,7 @@ const Header = () => {
             )}
           </div>
           <div className="iconavt">
-            <UserOutlined />
+            <UserOutlined onClick={gotoProfile} style={{ cursor: "pointer" }} />
           </div>
         </div>
       </nav>

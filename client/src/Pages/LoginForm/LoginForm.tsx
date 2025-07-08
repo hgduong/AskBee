@@ -1,30 +1,27 @@
 import "./LoginForm.css";
 import { Button, message } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const LoginForm = () => {
+  const [credentials, setCredentials] = useState({
+    username: "",
+    password: "",
+  });
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
-    const usernameInput = document.querySelector(
-      'input[type="text"]'
-    ) as HTMLInputElement | null;
-    const passwordInput = document.querySelector(
-      'input[type="password"]'
-    ) as HTMLInputElement | null;
-    const username = usernameInput?.value;
-    const password = passwordInput?.value;
-
-    if (!username || !password) {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!credentials.username || !credentials.password) {
       message.error("Vui lòng nhập đầy đủ tài khoản và mật khẩu!");
       return;
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify(credentials),
       });
       const data = await response.json();
 
@@ -46,22 +43,33 @@ const LoginForm = () => {
       <div className="bg-image"></div>
       <div className="login-content"></div>
       <div className="login-content">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault(); // Ngăn reload trang
-            handleLogin();
-          }}
-        >
+        <form onSubmit={handleLogin}>
           <h1 className="title">🐝 Bee Login</h1>
 
           <div className="input-box">
             <label>Tài khoản</label>
-            <input type="text" placeholder="Username" required />
+            <input
+              type="text"
+              value={credentials.username}
+              onChange={(e) =>
+                setCredentials({ ...credentials, username: e.target.value })
+              }
+              placeholder="Username"
+              required
+            />
           </div>
 
           <div className="input-box">
             <label>Mật khẩu</label>
-            <input type="password" placeholder="Password" required />
+            <input
+              type="password"
+              value={credentials.password}
+              onChange={(e) =>
+                setCredentials({ ...credentials, password: e.target.value })
+              }
+              placeholder="Password"
+              required
+            />
           </div>
 
           <div className="remember-forgot">
@@ -76,12 +84,7 @@ const LoginForm = () => {
             </span>
           </div>
 
-          <Button
-            type="primary"
-            onClick={handleLogin}
-            className="login-button"
-            htmlType="submit" // Thêm để submit form
-          >
+          <Button type="primary" className="login-button" htmlType="submit">
             Đăng nhập
           </Button>
 

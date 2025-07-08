@@ -23,6 +23,7 @@ import "./App.css";
 import ContactPage from "./Pages/ContactPage/ContactPage.tsx";
 import DonatePage from "./Pages/DonatePage/DonatePage.tsx";
 import IntroductionPage from "./Pages/Introduction/IntroductionPage.tsx";
+import ProfilePage from "./Pages/ProfilePage/ProfilePage.tsx";
 const App = () => {
   return (
     <div
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/about" element={<IntroductionPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </div>
       <Footer />

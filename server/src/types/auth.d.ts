@@ -9,8 +9,11 @@ export interface RegisterRequest {
   confirmpassword: string;
 }
 export interface User {
-  id: string;
+  _id: string;
   username: string;
   password: string;
+  phone: string;
+  address: string;
+  status: string;
   role: "admin" | "user";
 }

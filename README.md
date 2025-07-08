@@ -15,3 +15,17 @@ Cài mongoose: npm install mongoose @types/mongoose
 - SQL: MongoDB
   |-----------------------------------------------------------------------------------------------------------------------|
   Tạo QRCode:npm install qrcode.react
+- Cấu trúc dự án:
+  - db.ts: Kết nối MongoDB, xử lý lỗi.
+  - app.ts: Khởi động Express, middleware (CORS, JSON), route chính.
+  - apis/\_.ts: Định nghĩa API endpoint.
+  - controllers/\_.ts: Xử lý logic business.
+  - models/\_.ts: Định nghĩa schema MongoDB.
+  - types/\_.ts: Định nghĩa kiểu TypeScript.
+    .env: Lưu config (URI, SECRET, PORT).
+- Luồng hoạt động:
+  - Khởi động: app.ts gọi connectDB, chạy server.
+  - Request: Client gửi HTTP (GET/POST) đến /api/....
+  - Route: apis/\*.ts định tuyến đến controller.
+  - Controller: Xử lý logic, gọi model (MongoDB).
+  - Response: Trả về JSON (thành công/lỗi).

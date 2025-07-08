@@ -1,3 +1,5 @@
+/// call api từ fe tới be///
+////////////////////////////
 import express from "express";
 import { getUsers, updateUserStatus } from "../controllers/user.controller";
 
