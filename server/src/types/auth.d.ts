@@ -16,4 +16,5 @@ export interface User {
   address: string;
   status: string;
   role: "admin" | "user";
+  points: number;
 }

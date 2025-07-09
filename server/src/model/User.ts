@@ -8,6 +8,7 @@ interface IUser extends Document {
   address: string;
   status: string;
   role: "admin" | "user";
+  points: number;
 }
 
 // Định nghĩa schema
@@ -19,6 +20,7 @@ const userSchema: Schema = new mongoose.Schema(
     address: { type: String, default: "" },
     status: { type: String, default: "active" },
     role: { type: String, enum: ["admin", "user"], default: "user" },
+    points: { type: Number, default: 0 },
   },
   { timestamps: true }
 );

@@ -1,9 +1,9 @@
-/* Bee.css */
 .bee {
   position: absolute;
-  animation: fly 5s linear infinite;
+  filter: url(#glow); /* Apply glow effect */
 }
 
+/* Optional: You can keep the fly animation if you want to add more effects */
 @keyframes fly {
   0% {
     transform: translate(0, 0);

@@ -20,10 +20,11 @@ import Class10 from "./ClassItem/Class10.tsx";
 import Class11 from "./ClassItem/Class11.tsx";
 import Class12 from "./ClassItem/Class12.tsx";
 import "./App.css";
-import ContactPage from "./Pages/ContactPage/ContactPage.tsx";
 import DonatePage from "./Pages/DonatePage/DonatePage.tsx";
 import IntroductionPage from "./Pages/Introduction/IntroductionPage.tsx";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage.tsx";
+import RecipeUploadForm from "./Pages/RecipeUploadForm/RecipeUploadForm.tsx";
+import PetalFalling from "./components/PetalFalling/PetalFalling.jsx";
 const App = () => {
   return (
     <div
@@ -33,6 +34,7 @@ const App = () => {
         minHeight: "100vh",
       }}
     >
+      <PetalFalling />
       <Header />
       <div style={{ flex: 1 }}>
         <Routes>
@@ -52,7 +54,7 @@ const App = () => {
           <Route path="/class10" element={<Class10 />} />
           <Route path="/class11" element={<Class11 />} />
           <Route path="/class12" element={<Class12 />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contact" element={<RecipeUploadForm />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/about" element={<IntroductionPage />} />
           <Route path="/profile" element={<ProfilePage />} />
