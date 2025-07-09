@@ -1,69 +1,116 @@
-import React from 'react';
-import { Layout, Menu, theme } from 'antd';
-import './Header.css';
-import { UserOutlined, ArrowRightOutlined} from '@ant-design/icons';
-import { Dropdown, Avatar } from 'antd';
+import "./Header.css";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Bee from "../HeaderComponent/Bee";
+import { UserOutlined } from "@ant-design/icons";
 
-const menu = (
-  <Menu
-    items={[
-      { key: '1', label: 'Trang cá nhân' },
-      { key: '2', label: 'Đăng xuất' },
-    ]}
-  />
-);
+const Header = () => {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
 
-<Dropdown overlay={menu} placement="bottomRight">
-  <Avatar icon={<UserOutlined />} style={{ cursor: 'pointer' }} />
-</Dropdown>
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    navigate("/login");
+  };
 
-const { Header} = Layout;
+  const handleRegister = () => {
+    navigate("/register");
+  };
 
-const items = Array.from({ length: 12 }).map((_, index) => ({
-  key: index + 1,
-  label: `Lớp ${index + 1}`,
-}));
-
-const App: React.FC = () => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
-
+  const onLogout = () => {
+    setUsername("");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+  const gotoProfile = () => {
+    if (isLoggedIn) {
+      navigate("/profile");
+    }
+  };
   return (
-    
-    <>
-    <div className="shiny-banner">
-  <div className="marquee-container">
-    <div className="marquee-text">
-      Thắc Mắc Chi Đã Có Bee — Thắc Mắc Chi Đã Có Bee —
-    </div>
-  </div>
-</div>
-    <Layout style={{ width: '100vw', padding: 0, margin: 0 }}>
-      
-      <Header className="custom-header" style={{ width: '100vw' }}>
-        <div className="demo-logo" />
-        <div>Công Thức | Tài liệu học tập</div>
-        <ArrowRightOutlined />
-        <Menu
-          
-          mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={items}
-          className="custom-menu"
-        />
-        {/* Thêm nút Đăng nhập/Đăng ký */}
-  <div className="auth-buttons">
-    <button className="login-btn">Đăng nhập</button>
-    <button className="register-btn">Đăng ký</button>
-  </div>
-  <Dropdown overlay={menu} placement="bottomRight">
-  <Avatar icon={<UserOutlined />} style={{ cursor: 'pointer' }} />
-</Dropdown>
-      </Header>
-    </Layout>
-    </>
+    <header>
+      <div className="logo">
+        <Bee />
+      </div>
+      <nav className="navbar">
+        <div className="nav-list">
+          <div className="nav-item">
+            <Link to="/">Trang chủ</Link>
+          </div>
+          <div className="nav-item">
+            <Link to="/about">Giới thiệu</Link>
+          </div>
+          <div className="nav-item">
+            <Link to="/contact">Liên hệ</Link>
+          </div>
+          <div className="nav-item">
+            <Link to="/donate">Ủng hộ</Link>
+          </div>
+
+          <div>
+            {isLoggedIn ? (
+              <div className="logout">
+                <span>{username}</span>
+                <div onClick={onLogout}>Đăng xuất</div>
+              </div>
+            ) : (
+              <div id="login-register">
+                <div className="lg">
+                  <div onClick={handleLogin}>Đăng nhập</div>
+                </div>
+                <div className="rg">
+                  <div onClick={handleRegister}>Đăng ký</div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="iconavt">
+            <UserOutlined onClick={gotoProfile} style={{ cursor: "pointer" }} />
+          </div>
+        </div>
+      </nav>
+      <div className="grid-container">
+        <Link to="/class1" className="grid-item">
+          Lớp 1
+        </Link>
+        <Link to="/class2" className="grid-item">
+          Lớp 2
+        </Link>
+        <Link to="/class3" className="grid-item">
+          Lớp 3
+        </Link>
+        <Link to="/class4" className="grid-item">
+          Lớp 4
+        </Link>
+        <Link to="/class5" className="grid-item">
+          Lớp 5
+        </Link>
+        <Link to="/class6" className="grid-item">
+          Lớp 6
+        </Link>
+        <Link to="/class7" className="grid-item">
+          Lớp 7
+        </Link>
+        <Link to="/class8" className="grid-item">
+          Lớp 8
+        </Link>
+        <Link to="/class9" className="grid-item">
+          Lớp 9
+        </Link>
+        <Link to="/class10" className="grid-item">
+          Lớp 10
+        </Link>
+        <Link to="/class11" className="grid-item">
+          Lớp 11
+        </Link>
+        <Link to="/class12" className="grid-item">
+          Lớp 12
+        </Link>
+      </div>
+    </header>
   );
 };
 
-export default App;
+export default Header;

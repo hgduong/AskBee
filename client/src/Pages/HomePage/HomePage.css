@@ -1,0 +1,43 @@
+.header {
+  text-align: center;
+  color: #1d1b1b;
+  height: 64px;
+  padding-inline: 48px;
+  line-height: 64px;
+  background-color: #aaa9a8;
+  width: 100%; /* Thay 200% bằng 100% */
+}
+
+.content {
+  text-align: center;
+  min-height: 100%; /* Đảm bảo chiếm toàn bộ chiều cao còn lại */
+  line-height: 120px;
+  color: #fff;
+  background-color: #0958d9;
+  height: calc(100vh - 64px - 64px); /* Trừ chiều cao Header và Footer */
+}
+
+.sider {
+  text-align: center;
+
+  color: #fff;
+  background-color: #353638;
+  height: 100%; /* Đảm bảo Sider chiếm toàn bộ chiều cao */
+}
+
+.layout {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%; /* Loại bỏ giới hạn 50% */
+  max-width: 100%; /* Loại bỏ giới hạn max-width */
+  height: 100%; /* Đảm bảo layout chiếm toàn bộ chiều cao */
+}
+
+.footer {
+  text-align: center;
+  color: #1d1b1b;
+  height: 64px;
+  line-height: 64px;
+  background-color: #aaa9a8;
+  width: 100%; /* Đảm bảo Footer full width */
+}

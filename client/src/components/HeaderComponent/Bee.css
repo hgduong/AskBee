@@ -1,0 +1,23 @@
+.bee {
+  position: absolute;
+  filter: url(#glow); /* Apply glow effect */
+}
+
+/* Optional: You can keep the fly animation if you want to add more effects */
+@keyframes fly {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, -50px);
+  }
+  50% {
+    transform: translate(200px, 0);
+  }
+  75% {
+    transform: translate(100px, 50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

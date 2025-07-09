@@ -1,0 +1,23 @@
+/* ResponsiveComponent.css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw; /* Chiếm toàn bộ chiều rộng của màn hình */
+  height: 100vh; /* Chiếm toàn bộ chiều cao của màn hình */
+  justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+  align-items: center; /* Căn giữa nội dung theo chiều ngang */
+}
+
+.content {
+  max-width: 100%; /* Giới hạn chiều rộng tối đa */
+  height: auto; /* Chiều cao tự động */
+  background-color: lightblue; /* Màu nền cho nội dung */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}

@@ -1,0 +1,50 @@
+.petal {
+  position: fixed;
+  top: -10px;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 50% 0 50% 50%;
+  transform: rotate(45deg);
+  opacity: 0.6; /* Giảm độ đậm */
+  width: 8px; /* Kích thước nhỏ hơn */
+  height: 8px;
+  background-color: rgba(255, 209, 220, 0.7); /* Màu hồng phấn nhạt */
+  box-shadow: 0 0 5px rgba(255, 182, 193, 0.3); /* Ánh sáng mờ */
+  filter: blur(0.3px); /* Làm mờ nhẹ cạnh */
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6; /* Hiện lên từ từ */
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0.5; /* Giữ độ trong suốt */
+  }
+  100% {
+    transform: translateY(calc(100vh + 10px)) rotate(180deg) scale(0.9);
+    opacity: 0;
+  }
+}
+
+/* Biến thể cho các cánh hoa */
+.petal:nth-child(3n) {
+  background-color: rgba(255, 228, 232, 0.6); /* Màu nhạt hơn */
+  width: 6px;
+  height: 6px;
+}
+
+.petal:nth-child(5n) {
+  background-color: rgba(255, 240, 245, 0.7); /* Màu trắng hồng */
+  transform: rotate(30deg);
+}
+
+.petal:nth-child(7n) {
+  animation-duration: 8s; /* Rơi chậm hơn */
+  width: 7px;
+  height: 7px;
+}
